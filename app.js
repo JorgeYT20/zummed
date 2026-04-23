@@ -171,3 +171,13 @@ document.addEventListener("keydown", (event) => {
 
 renderProducts();
 renderCart();
+
+// Mobile Menu Toggle
+const mobileMenuToggle = document.getElementById("mobile-menu-toggle");
+const navLinks = document.getElementById("nav-links");
+
+if (mobileMenuToggle && navLinks) {
+  mobileMenuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("is-open");
+  });
+}
