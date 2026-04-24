@@ -3,9 +3,10 @@ const products = [
     id: 1,
     name: "Estetoscopio Littmann Classic III",
     price: 420,
-    originalPrice: 519,
+    originalPrice: 520,
     discount: "-19%",
-    isNew: true,
+    isNew: false,
+    category: "Productos Médicos",
     description: "Precisión acústica y ergonomía para evaluación clínica diaria."
   },
   {
@@ -14,17 +15,29 @@ const products = [
     price: 3850,
     originalPrice: 4590,
     discount: "-16%",
-    isNew: false,
+    isNew: true,
+    category: "Mobiliario Médico",
     description: "Monitoreo confiable para áreas críticas, hospitalización y consulta."
   },
   {
     id: 3,
-    name: "Tensiómetro Digital Omron HEM-7156",
+    name: "Tensiómetro Digital de Brazo Omron HEM-7156",
     price: 185,
-    originalPrice: 219,
-    discount: "-15%",
-    isNew: true,
+    originalPrice: 220,
+    discount: "-16%",
+    isNew: false,
+    category: "Ortopedia",
     description: "Medición rápida y precisa con lectura intuitiva para uso profesional."
+  },
+  {
+    id: 4,
+    name: "Oxímetro de Pulso Fingertip Contec CMS50D",
+    price: 95,
+    originalPrice: 120,
+    discount: "-21%",
+    isNew: true,
+    category: "Laboratorio",
+    description: "Medición no invasiva de saturación de oxígeno y frecuencia cardíaca."
   }
 ];
 
@@ -181,3 +194,23 @@ if (mobileMenuToggle && navLinks) {
     navLinks.classList.toggle("is-open");
   });
 }
+
+// Scroll Animations
+const observerOptions = {
+  root: null,
+  rootMargin: '0px',
+  threshold: 0.15
+};
+
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.scroll-animate').forEach((element) => {
+  observer.observe(element);
+});

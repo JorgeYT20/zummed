@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Catálogo completo de equipos médicos Zumed.">
+  <title>Catálogo | ZuMed MedEquip</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Manrope:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="site-shell">
+    <header class="topbar">
+      <div class="container nav">
+        <a class="brand" href="index.html" aria-label="ZuMed MedEquip">
+          <span class="brand-mark" style="background: transparent;">
+            <img src="./img/logo.png" alt="Zumed Logo" style="width: 100%; height: 100%; object-fit: contain;">
+          </span>
+        </a>
+
+        <nav class="nav-links" id="nav-links" aria-label="Principal">
+          <a href="index.html#inicio">Inicio</a>
+          <a href="catalogo.html" class="active">Catálogo</a>
+          <a href="index.html#nosotros">Nosotros</a>
+          <a href="index.html#contacto">Contacto</a>
+        </nav>
+
+        <div class="nav-actions">
+          <button class="icon-button" type="button" aria-label="Buscar">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </button>
+          <button class="icon-button" type="button" aria-label="Usuario">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+          </button>
+          <button class="icon-button cart-icon-button" type="button" id="cart-toggle" aria-label="Abrir carrito">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+            <strong id="cart-count">0</strong>
+          </button>
+          <button class="icon-button mobile-menu-toggle" type="button" id="mobile-menu-toggle" aria-label="Abrir menú">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="catalog-page">
+      <div class="catalog-banner">
+        <div class="container">
+          <h1>Catálogo de Equipos Médicos</h1>
+          <p>Lima, Perú · Distribución autorizada · Garantía oficial</p>
+        </div>
+      </div>
+
+      <section class="catalog-content">
+        <div class="container">
+          <div class="catalog-toolbar">
+            <div class="catalog-search-bar">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              <input type="text" id="catalog-search-input" placeholder="Buscar productos...">
+            </div>
+            <div class="catalog-filters">
+              <select id="category-select">
+                <option value="all">Todas las categorías</option>
+                <option value="Laboratorio">Laboratorio</option>
+                <option value="Productos Médicos">Productos Médicos</option>
+                <option value="Ortopedia">Ortopedia</option>
+                <option value="Mobiliario Médico">Mobiliario Médico</option>
+              </select>
+              <select id="sort-select">
+                <option value="default">Ordenar por</option>
+                <option value="price-asc">Menor a mayor precio</option>
+                <option value="price-desc">Mayor a menor precio</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="catalog-pills" id="catalog-pills">
+            <button class="filter-pill active" data-category="all">Todos</button>
+            <button class="filter-pill" data-category="Laboratorio">Laboratorio</button>
+            <button class="filter-pill" data-category="Productos Médicos">Productos Médicos</button>
+            <button class="filter-pill" data-category="Ortopedia">Ortopedia</button>
+            <button class="filter-pill" data-category="Mobiliario Médico">Mobiliario Médico</button>
+          </div>
+
+          <div class="catalog-results-info">
+            <span id="catalog-results-count">0 productos encontrados</span>
+          </div>
+
+          <div class="products-grid catalog-products-grid" id="catalog-products-grid">
+            <!-- Catalog products rendered here -->
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="main-footer" id="contacto">
+      <div class="footer-container">
+          <div class="footer-column">
+              <img src="./img/logo.png" alt="ZUMMED Logo" class="footer-logo">
+              <p class="company-desc">
+                  <strong>ZUMMED S.A.C.</strong><br>
+                  Especialistas en equipamiento de Laboratorio, Médico, Ortopedia y Mobiliario.
+              </p>
+          </div>
+      </div>
+    </footer>
+
+    <aside class="cart-drawer" id="cart-drawer" aria-hidden="true">
+      <div class="cart-header">
+        <div>
+          <span class="eyebrow">Carrito</span>
+          <h3>Tu selección</h3>
+        </div>
+        <button class="icon-button" type="button" id="cart-close" aria-label="Cerrar carrito">×</button>
+      </div>
+
+      <div class="cart-body" id="cart-items">
+        <p class="empty-state">Aún no agregaste productos. Empieza con uno de los destacados.</p>
+      </div>
+
+      <div class="cart-footer">
+        <div class="cart-total">
+          <span>Total</span>
+          <strong id="cart-total">S/ 0.00</strong>
+        </div>
+        <a class="btn btn-primary btn-full" id="checkout-whatsapp" href="https://wa.me/51943625365?text=Hola%2C%20quiero%20asesor%C3%ADa%20sobre%20mi%20carrito." target="_blank" rel="noreferrer">Finalizar por WhatsApp</a>
+      </div>
+    </aside>
+
+    <a class="whatsapp-float" href="https://wa.link/3epp04" target="_blank" rel="noreferrer" aria-label="Asesoría personalizada por WhatsApp">
+      <span>WhatsApp</span>
+      <strong>Asesoría inmediata</strong>
+    </a>
+  </div>
+
+  <script src="./app.js"></script>
+  <script src="./catalogo.js"></script>
+</body>
+</html>
