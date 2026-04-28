@@ -7,42 +7,128 @@ document.addEventListener("DOMContentLoaded", () => {
   const resultsCount = document.getElementById("catalog-results-count");
 
   let currentCategory = "all";
+  let currentSubcategory = "all";
   let currentSearchTerm = "";
   let currentSort = "default";
+
+  const menuSubcategorias = {
+    'Laboratorio': ['Equipos', 'Material e Insumos', 'Reactivos'],
+    'Equipos Médicos': ['Monitoreo y Diagnóstico', 'Pesaje y Medición', 'Descartables'],
+    'Ortopedia': ['Sillas de Ruedas', 'Camas Clínicas', 'Productos y Accesorios'],
+    'Mobiliario': ['Emergencia (Trauma)', 'Mobiliario Médico', 'Otros']
+  };
+
+  // Crear contenedor de subcategorías dinámicamente
+  const subcategoryContainer = document.createElement("div");
+  subcategoryContainer.className = "catalog-pills subcategorias-container";
+  subcategoryContainer.style.display = "none";
+  subcategoryContainer.style.marginTop = "16px";
+  
+  const mainPillsContainer = document.getElementById("catalog-pills");
+  if (mainPillsContainer) {
+    mainPillsContainer.parentNode.insertBefore(subcategoryContainer, mainPillsContainer.nextSibling);
+  }
+
+  function mostrarSubcategorias(categoriaSeleccionada) {
+    subcategoryContainer.innerHTML = "";
+    
+    if (!menuSubcategorias[categoriaSeleccionada]) {
+      subcategoryContainer.style.display = "none";
+      currentSubcategory = "all";
+      return;
+    }
+
+    subcategoryContainer.style.display = "flex";
+    subcategoryContainer.style.flexWrap = "wrap";
+    subcategoryContainer.style.gap = "10px";
+    
+    // Botón "Todas"
+    const btnAll = document.createElement("button");
+    btnAll.className = "filter-pill sub-pill btn-filtro-sub active";
+    btnAll.setAttribute("data-subcategory", "all");
+    btnAll.textContent = "Todas las subcategorías";
+    subcategoryContainer.appendChild(btnAll);
+
+    // Botones dinámicos
+    menuSubcategorias[categoriaSeleccionada].forEach(subcat => {
+      const btn = document.createElement("button");
+      btn.className = "filter-pill sub-pill btn-filtro-sub";
+      btn.setAttribute("data-subcategory", subcat);
+      btn.textContent = subcat;
+      subcategoryContainer.appendChild(btn);
+    });
+
+    // Agregar eventos a los nuevos botones
+    const subPills = subcategoryContainer.querySelectorAll(".sub-pill");
+    subPills.forEach(pill => {
+      pill.addEventListener("click", () => {
+        filtrarPorSubcategoria(pill.getAttribute("data-subcategory"));
+        subPills.forEach(p => p.classList.toggle("active", p === pill));
+      });
+    });
+    
+    currentSubcategory = "all";
+  }
+
+  function filtrarPorSubcategoria(subcat) {
+    currentSubcategory = subcat;
+    renderCatalog();
+  }
 
   function renderCatalog() {
     if (!catalogGrid) return;
 
-    let filteredProducts = products.filter(product => {
-      const matchesCategory = currentCategory === "all" || product.category === currentCategory;
-      const matchesSearch = product.name.toLowerCase().includes(currentSearchTerm.toLowerCase());
-      return matchesCategory && matchesSearch;
+    let filteredProducts = todosLosProductos.filter(product => {
+      // Compatibilidad con la nueva estructura y la anterior (app.js)
+      const pName = product.nombre || product.name || "";
+      const pCat = product.categoria || product.category || "";
+      const pSubcat = product.subcategoria || "all";
+
+      const matchesCategory = currentCategory === "all" || pCat === currentCategory;
+      const matchesSubcategory = menuSubcategorias[currentCategory]
+        ? (currentSubcategory === "all" || pSubcat === currentSubcategory)
+        : true;
+      const matchesSearch = pName.toLowerCase().includes(currentSearchTerm.toLowerCase());
+      
+      return matchesCategory && matchesSubcategory && matchesSearch;
     });
 
     if (currentSort === "price-asc") {
-      filteredProducts.sort((a, b) => a.price - b.price);
+      filteredProducts.sort((a, b) => (a.precio || a.price) - (b.precio || b.price));
     } else if (currentSort === "price-desc") {
-      filteredProducts.sort((a, b) => b.price - a.price);
+      filteredProducts.sort((a, b) => (b.precio || b.price) - (a.precio || a.price));
     }
 
     resultsCount.textContent = `${filteredProducts.length} productos encontrados`;
 
-    catalogGrid.innerHTML = filteredProducts.map(product => `
+    catalogGrid.innerHTML = filteredProducts.map(product => {
+      const pName = product.nombre || product.name || "";
+      const pCat = product.categoria || product.category || "";
+      const pPrice = product.precio || product.price || 0;
+      
+      // Mostrar imagen real si existe (desde imagenes[] o imagen fallback), sino el texto
+      const pImage = (product.imagenes && product.imagenes.length > 0) ? product.imagenes[0] : (product.imagen || null);
+      
+      const mediaContent = pImage 
+        ? `<img src="${pImage}" alt="${pName}" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;">`
+        : (pName.split(" ")[0]);
+
+      return `
       <article class="product-card catalog-card">
-        <div class="product-media catalog-media">
-          ${product.name.split(" ")[0]}
+        <div class="product-media catalog-media" style="padding: ${pImage ? '0' : '24px'}; overflow: hidden;">
+          ${mediaContent}
         </div>
         <div class="product-tags">
-          <span class="tag tag-discount">${product.discount}</span>
+          ${product.discount ? `<span class="tag tag-discount">${product.discount}</span>` : ""}
           ${product.isNew ? '<span class="tag tag-new">Nuevo</span>' : ""}
         </div>
         <div class="catalog-card-body">
-          <span class="catalog-category-label">${product.category}</span>
-          <h3>${product.name}</h3>
+          <span class="catalog-category-label">${pCat}${product.subcategoria ? ` > ${product.subcategoria}` : ""}</span>
+          <h3>${pName}</h3>
           <div class="catalog-card-footer">
             <div class="product-price">
-              <strong>${formatCurrency(product.price)}</strong>
-              <span class="original-price">${formatCurrency(product.originalPrice)}</span>
+              <strong>${pPrice ? formatCurrency(pPrice) : 'Consultar'}</strong>
+              ${product.originalPrice ? `<span class="original-price">${formatCurrency(product.originalPrice)}</span>` : ""}
             </div>
             <button class="btn btn-primary add-to-cart btn-block" type="button" data-product-id="${product.id}">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
@@ -51,7 +137,8 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
         </div>
       </article>
-    `).join("");
+      `;
+    }).join("");
 
     // Attach cart event listeners (reusing logic from app.js)
     catalogGrid.querySelectorAll(".add-to-cart").forEach((btn) => {
@@ -61,7 +148,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (existing) {
           existing.quantity += 1;
         } else {
-          const product = products.find((p) => p.id === productId);
+          const product = todosLosProductos.find((p) => p.id === productId);
           if (product) cart.push({ ...product, quantity: 1 });
         }
         if (typeof renderCart === 'function') renderCart();
@@ -110,6 +197,8 @@ document.addEventListener("DOMContentLoaded", () => {
         pill.classList.remove("active");
       }
     });
+
+    mostrarSubcategorias(category);
   }
 
   // Initial render

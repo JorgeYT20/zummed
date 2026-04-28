@@ -1,14 +1,14 @@
 :root {
-  --bg: #f4fbfa;
+  --bg: #F4F7F9;
   --surface: #ffffff;
-  --surface-soft: #eef8f7;
-  --primary: #10b39a;
-  --primary-dark: #0e8f7f;
-  --secondary: #123247;
-  --text: #1c2d38;
+  --surface-soft: #e9f0f4;
+  --primary: #3CBED8;
+  --primary-dark: #2baec8;
+  --secondary: #1A2B3C;
+  --text: #1A2B3C;
   --muted: #627482;
-  --border: rgba(18, 50, 71, 0.12);
-  --shadow: 0 24px 60px rgba(18, 50, 71, 0.12);
+  --border: rgba(26, 43, 60, 0.12);
+  --shadow: 0 24px 60px rgba(26, 43, 60, 0.12);
   --radius-lg: 28px;
   --radius-md: 20px;
   --radius-sm: 14px;
@@ -27,8 +27,8 @@ body {
   margin: 0;
   font-family: "Plus Jakarta Sans", sans-serif;
   background:
-    radial-gradient(circle at top left, rgba(16, 179, 154, 0.12), transparent 32%),
-    linear-gradient(180deg, #fbfefe 0%, var(--bg) 100%);
+    radial-gradient(circle at top left, rgba(60, 190, 216, 0.12), transparent 32%),
+    linear-gradient(180deg, #ffffff 0%, var(--bg) 100%);
   color: var(--text);
 }
 
@@ -52,7 +52,7 @@ button {
   z-index: 20;
   backdrop-filter: blur(16px);
   background: rgba(255, 255, 255, 0.88);
-  border-bottom: 1px solid rgba(18, 50, 71, 0.08);
+  border-bottom: 1px solid rgba(26, 43, 60, 0.08);
   transition: all 0.3s ease;
 }
 
@@ -212,7 +212,7 @@ button {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(2, 20, 26, 0.98) 0%, rgba(6, 40, 50, 0.9) 50%, rgba(8, 80, 65, 0.75) 100%);
+  background: linear-gradient(90deg, rgba(26, 43, 60, 0.98) 0%, rgba(26, 43, 60, 0.9) 50%, rgba(60, 190, 216, 0.75) 100%);
   pointer-events: none;
 }
 
@@ -242,7 +242,7 @@ button {
 
 
 .hero-badge svg {
-  color: #6be0ca;
+  color: #3CBED8;
 }
 
 .hero-copy h1 {
@@ -255,7 +255,7 @@ button {
 }
 
 .text-highlight {
-  color: #6be0ca;
+  color: #3CBED8;
 }
 
 .hero-copy p {
@@ -295,11 +295,11 @@ button {
 .btn-primary {
   background: var(--primary);
   color: #fff;
-  box-shadow: 0 12px 24px rgba(16, 179, 154, 0.3);
+  box-shadow: 0 12px 24px rgba(60, 190, 216, 0.3);
 }
 
 .btn-primary:hover {
-  background: #12ccb0;
+  background: #E64E97;
 }
 
 .btn-glass {
@@ -361,8 +361,8 @@ button {
   height: 100%;
   padding: 28px;
   background:
-    linear-gradient(160deg, rgba(16, 179, 154, 0.12), transparent 45%),
-    linear-gradient(180deg, #ffffff 0%, #f3fbfa 100%);
+    linear-gradient(160deg, rgba(60, 190, 216, 0.12), transparent 45%),
+    linear-gradient(180deg, #ffffff 0%, #F4F7F9 100%);
 }
 
 .panel-label {
@@ -386,7 +386,7 @@ button {
   padding: 18px;
   border-radius: var(--radius-md);
   background: rgba(255, 255, 255, 0.84);
-  border: 1px solid rgba(18, 50, 71, 0.08);
+  border: 1px solid rgba(26, 43, 60, 0.08);
 }
 
 .panel-stats strong,
@@ -428,9 +428,10 @@ button {
 .product-card,
 .about-card {
   padding: 24px;
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(10px);
   border: 1px solid var(--border);
-  box-shadow: 0 18px 45px rgba(18, 50, 71, 0.08);
+  box-shadow: 0 18px 45px rgba(26, 43, 60, 0.08);
 }
 
 .metrics-grid strong {
@@ -463,7 +464,7 @@ button {
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(16, 179, 154, 0.15), transparent 70%);
+  background: radial-gradient(circle, rgba(60, 190, 216, 0.15), transparent 70%);
 }
 
 .categories-heading-flex {
@@ -498,7 +499,7 @@ button {
   background: #fff;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(18, 50, 71, 0.05);
+  box-shadow: 0 10px 30px rgba(26, 43, 60, 0.05);
   transition: all 0.3s ease;
   border: 1px solid transparent;
   display: flex;
@@ -507,7 +508,7 @@ button {
 
 .category-card-new:hover {
   transform: translateY(-6px);
-  box-shadow: 0 15px 35px rgba(18, 50, 71, 0.1);
+  box-shadow: 0 15px 35px rgba(26, 43, 60, 0.1);
   border-color: var(--primary);
 }
 
@@ -548,7 +549,7 @@ button {
 }
 
 .category-card-new:hover .category-icon-new {
-  color: #1dc8aa;
+  color: #3CBED8;
   transform: scale(1.1);
 }
 
@@ -585,7 +586,7 @@ button {
   height: 220px;
   border-radius: 22px;
   margin-bottom: 18px;
-  background: linear-gradient(145deg, rgba(16, 179, 154, 0.18), rgba(18, 50, 71, 0.08));
+  background: linear-gradient(145deg, rgba(60, 190, 216, 0.18), rgba(26, 43, 60, 0.08));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -594,6 +595,17 @@ button {
   color: var(--secondary);
   font-weight: 800;
   font-size: 1.3rem;
+  overflow: hidden;
+}
+
+.product-media img, .product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+  background: #f0f0f0; /* Fondo gris si no hay imagen */
+  min-height: 200px;
+  display: block;
 }
 
 .product-tags {
@@ -611,12 +623,12 @@ button {
 }
 
 .tag-discount {
-  background: rgba(13, 143, 127, 0.12);
+  background: rgba(43, 174, 200, 0.12);
   color: var(--primary-dark);
 }
 
 .tag-new {
-  background: rgba(18, 50, 71, 0.1);
+  background: rgba(26, 43, 60, 0.1);
   color: var(--secondary);
 }
 
@@ -676,7 +688,7 @@ button {
   width: min(420px, 100vw);
   height: 100vh;
   background: rgba(255, 255, 255, 0.98);
-  box-shadow: -12px 0 40px rgba(18, 50, 71, 0.18);
+  box-shadow: -12px 0 40px rgba(26, 43, 60, 0.18);
   padding: 24px;
   display: grid;
   grid-template-rows: auto 1fr auto;
@@ -736,7 +748,7 @@ button {
   display: grid;
   place-items: center;
   border-radius: 50%;
-  background: rgba(18, 50, 71, 0.08);
+  background: rgba(26, 43, 60, 0.08);
   color: var(--secondary);
 }
 
@@ -760,9 +772,9 @@ button {
   gap: 2px;
   padding: 14px 18px;
   border-radius: 20px;
-  background: linear-gradient(135deg, var(--primary), #1fd5b4);
+  background: linear-gradient(135deg, var(--primary), #E64E97);
   color: #fff;
-  box-shadow: 0 20px 40px rgba(16, 179, 154, 0.28);
+  box-shadow: 0 20px 40px rgba(60, 190, 216, 0.28);
 }
 
 .whatsapp-float span {
@@ -885,15 +897,15 @@ button {
   align-items: center;
   justify-content: center;
   color: var(--primary);
-  background: rgba(16, 179, 154, 0.08);
-  border: 1px solid rgba(16, 179, 154, 0.2);
+  background: rgba(60, 190, 216, 0.08);
+  border: 1px solid rgba(60, 190, 216, 0.2);
   flex-shrink: 0;
 }
 
 .about-image-wrapper {
   border-radius: 24px;
   overflow: hidden;
-  box-shadow: 0 20px 50px rgba(18, 50, 71, 0.15);
+  box-shadow: 0 20px 50px rgba(26, 43, 60, 0.15);
 }
 
 .about-image-wrapper img {
@@ -1094,11 +1106,11 @@ button {
 
 
 .main-footer {
-    background-color: #0b2a2d; /* Verde oscuro profundo coherente con el Hero */
-    color: #e0f2f1;
+    background-color: #1A2B3C; /* Verde oscuro profundo coherente con el Hero */
+    color: #e9f0f4;
     padding: 60px 8% 20px;
     font-size: 0.9rem;
-    border-top: 3px solid #00b8a9;
+    border-top: 3px solid #3CBED8;
 }
 
 .footer-container {
@@ -1109,7 +1121,7 @@ button {
 }
 
 .footer-column h3 {
-    color: #00d1c1;
+    color: #3CBED8;
     margin-bottom: 20px;
     font-size: 1.2rem;
     position: relative;
@@ -1120,7 +1132,7 @@ button {
     display: block;
     width: 40px;
     height: 2px;
-    background: #00d1c1;
+    background: #3CBED8;
     margin-top: 8px;
 }
 
@@ -1137,7 +1149,7 @@ button {
 }
 
 .footer-column ul li i {
-    color: #00d1c1;
+    color: #3CBED8;
 }
 
 .footer-logo {
@@ -1150,7 +1162,7 @@ button {
     padding: 10px;
     border-radius: 8px;
     margin-bottom: 10px;
-    border-left: 3px solid #00d1c1;
+    border-left: 3px solid #3CBED8;
 }
 
 .developer-tag {
