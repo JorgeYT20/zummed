@@ -501,7 +501,7 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
-renderizarProductos(todosLosProductos);
+renderizarProductos(todosLosProductos.slice(0, 6));
 renderCart();
 
 // Mobile Menu Toggle
