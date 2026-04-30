@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Crear contenedor de subcategorías dinámicamente
   const subcategoryContainer = document.createElement("div");
-  subcategoryContainer.className = "catalog-pills subcategorias-container";
+  subcategoryContainer.classnombre = "catalog-pills subcategorias-container";
   subcategoryContainer.style.display = "none";
   subcategoryContainer.style.marginTop = "16px";
   
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     // Botón "Todas"
     const btnAll = document.createElement("button");
-    btnAll.className = "filter-pill sub-pill btn-filtro-sub active";
+    btnAll.classnombre = "filter-pill sub-pill btn-filtro-sub active";
     btnAll.setAttribute("data-subcategory", "all");
     btnAll.textContent = "Todas las subcategorías";
     subcategoryContainer.appendChild(btnAll);
@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Botones dinámicos
     menuSubcategorias[categoriaSeleccionada].forEach(subcat => {
       const btn = document.createElement("button");
-      btn.className = "filter-pill sub-pill btn-filtro-sub";
+      btn.classnombre = "filter-pill sub-pill btn-filtro-sub";
       btn.setAttribute("data-subcategory", subcat);
       btn.textContent = subcat;
       subcategoryContainer.appendChild(btn);
@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let filteredProducts = todosLosProductos.filter(product => {
       // Compatibilidad con la nueva estructura y la anterior (app.js)
-      const pName = product.nombre || product.name || "";
+      const pnombre = product.nombre || product.nombre || "";
       const pCat = product.categoria || product.category || "";
       const pSubcat = product.subcategoria || "all";
 
@@ -88,30 +88,30 @@ document.addEventListener("DOMContentLoaded", () => {
       const matchesSubcategory = menuSubcategorias[currentCategory]
         ? (currentSubcategory === "all" || pSubcat === currentSubcategory)
         : true;
-      const matchesSearch = pName.toLowerCase().includes(currentSearchTerm.toLowerCase());
+      const matchesSearch = pnombre.toLowerCase().includes(currentSearchTerm.toLowerCase());
       
       return matchesCategory && matchesSubcategory && matchesSearch;
     });
 
-    if (currentSort === "price-asc") {
-      filteredProducts.sort((a, b) => (a.precio || a.price) - (b.precio || b.price));
-    } else if (currentSort === "price-desc") {
-      filteredProducts.sort((a, b) => (b.precio || b.price) - (a.precio || a.price));
+    if (currentSort === "precio-asc") {
+      filteredProducts.sort((a, b) => (a.precio || a.precio) - (b.precio || b.precio));
+    } else if (currentSort === "precio-desc") {
+      filteredProducts.sort((a, b) => (b.precio || b.precio) - (a.precio || a.precio));
     }
 
     resultsCount.textContent = `${filteredProducts.length} productos encontrados`;
 
     catalogGrid.innerHTML = filteredProducts.map(product => {
-      const pName = product.nombre || product.name || "";
+      const pnombre = product.nombre || product.nombre || "";
       const pCat = product.categoria || product.category || "";
-      const pPrice = product.precio || product.price || 0;
+      const pprecio = product.precio || product.precio || 0;
       
       // Mostrar imagen real si existe (desde imagenes[] o imagen fallback), sino el texto
       const pImage = (product.imagenes && product.imagenes.length > 0) ? product.imagenes[0] : (product.imagen || null);
       
       const mediaContent = pImage 
-        ? `<img src="${pImage}" alt="${pName}" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;">`
-        : (pName.split(" ")[0]);
+        ? `<img src="${pImage}" alt="${pnombre}" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;">`
+        : (pnombre.split(" ")[0]);
 
       return `
       <article class="product-card catalog-card">
@@ -124,11 +124,11 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
         <div class="catalog-card-body">
           <span class="catalog-category-label">${pCat}${product.subcategoria ? ` > ${product.subcategoria}` : ""}</span>
-          <h3>${pName}</h3>
+          <h3>${pnombre}</h3>
           <div class="catalog-card-footer">
-            <div class="product-price">
-              <strong>${pPrice ? formatCurrency(pPrice) : 'Consultar'}</strong>
-              ${product.originalPrice ? `<span class="original-price">${formatCurrency(product.originalPrice)}</span>` : ""}
+            <div class="product-precio">
+              <strong>${pprecio ? formatCurrency(pprecio) : 'Consultar'}</strong>
+              ${product.originalprecio ? `<span class="original-precio">${formatCurrency(product.originalprecio)}</span>` : ""}
             </div>
             <button class="btn btn-primary add-to-cart btn-block" type="button" data-product-id="${product.id}">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>

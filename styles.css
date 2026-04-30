@@ -391,7 +391,7 @@ button {
 
 .panel-stats strong,
 .metrics-grid strong,
-.product-price,
+.product-precio,
 .cart-total strong {
   display: block;
   font-size: 1.4rem;
@@ -646,7 +646,7 @@ button {
   margin-top: 18px;
 }
 
-.product-price small {
+.product-precio small {
   display: block;
   color: var(--muted);
   font-size: 0.9rem;
@@ -1076,18 +1076,18 @@ button {
   gap: 12px;
 }
 
-.catalog-card .product-price {
+.catalog-card .product-precio {
   flex-direction: row;
   align-items: center;
   gap: 8px;
 }
 
-.catalog-card .product-price strong {
+.catalog-card .product-precio strong {
   font-size: 1.25rem;
   color: var(--secondary);
 }
 
-.catalog-card .product-price .original-price {
+.catalog-card .product-precio .original-precio {
   font-size: 0.85rem;
   color: var(--muted);
   text-decoration: line-through;
