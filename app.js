@@ -1,43 +1,43 @@
 // --- BLOQUE 1: EQUIPOS ---
 const productosLaboratorioEquipos = [
-  { id: 1, nombre: "AGITADOR DE VORTICE MOD. XH-D - HINOTEK", categoria: "Laboratorio", subcategoria: "Equipos", precio: 650.00, imagenes: ["img/productos/laboratorio/equipos/AGITADOR DE VORTICE MOD. XH-D - HINOTEK.png"], etiqueta: "" },
-  { id: 2, nombre: "AGITADOR MAGNETICO CON PLACA CALIENTE MOD. MSH-300-BIOSAN", categoria: "Laboratorio", subcategoria: "Equipos", precio: 3050.00, imagenes: ["img/productos/laboratorio/equipos/AGITADOR MAGNETICO CON PLACA CALIENTE MOD. MSH-300-BIOSAN.png"], etiqueta: "" },
-  { id: 3, nombre: "ANALIZADOR QUIMICO SEMIAUTOMATICO (BIOBASE)", categoria: "Laboratorio", subcategoria: "Equipos", precio: 4500.00, imagenes: ["img/productos/laboratorio/equipos/ANALIZADOR QUIMICO SEMIAUTOMATICO (BIOBASE).png"], etiqueta: "" },
-  { id: 4, nombre: "ATOCLAVE VERTICAL PORTATIL ANALOGA 18 LITROS (ACKERMAN)", categoria: "Laboratorio", subcategoria: "Equipos", precio: 1350.00, imagenes: ["img/productos/laboratorio/equipos/ATOCLAVE VERTICAL PORTATIL ANALOGA 18 LITROS (ACKERMAN).png"], etiqueta: "" },
-  { id: 5, nombre: "ATOCLAVE VERTICAL PORTATIL ANALOGA 24 LITROS (ACKERMAN)", categoria: "Laboratorio", subcategoria: "Equipos", precio: 1650.00, imagenes: ["img/productos/laboratorio/equipos/ATOCLAVE VERTICAL PORTATIL ANALOGA 24 LITROS (ACKERMAN).png"], etiqueta: "" },
-  { id: 6, nombre: "ATOCLAVE VERTICAL PORTATIL DIGITAL 18 LITROS (KYNTEL)", categoria: "Laboratorio", subcategoria: "Equipos", precio: 2000.00, imagenes: ["img/productos/laboratorio/equipos/ATOCLAVE VERTICAL PORTATIL DIGITAL 18 LITROS (KYNTEL).png"], etiqueta: "" },
-  { id: 7, nombre: "ATOCLAVE VERTICAL PORTATIL DIGITAL 24 LITROS (KYNTEL)", categoria: "Laboratorio", subcategoria: "Equipos", precio: 2300.00, imagenes: ["img/productos/laboratorio/equipos/ATOCLAVE VERTICAL PORTATIL DIGITAL 24 LITROS (KYNTEL).png"], etiqueta: "" },
-  { id: 8, nombre: "BALANZA DIGITAL DE PRECISION 220GR/0.0001G (FA2204)", categoria: "Laboratorio", subcategoria: "Equipos", precio: 2500.00, imagenes: ["img/productos/laboratorio/equipos/BALANZA DIGITAL DE PRECISION 220GR/0.0001G (FA2204).png"], etiqueta: "" },
-  { id: 9, nombre: "BALANZA DIGITAL DE PRECISION 3000GR/0.01G (ACKERMAN)", categoria: "Laboratorio", subcategoria: "Equipos", precio: 550.00, imagenes: ["img/productos/laboratorio/equipos/BALANZA DIGITAL DE PRECISION 3000GR/0.01G (ACKERMAN).png"], etiqueta: "" },
-  { id: 10, nombre: "BALANZA DIGITAL DE PRECISION 310GR/0.001G (ACKERMAN)", categoria: "Laboratorio", subcategoria: "Equipos", precio: 1250.00, imagenes: ["img/productos/laboratorio/equipos/BALANZA DIGITAL DE PRECISION 310GR/0.001G (ACKERMAN).png"], etiqueta: "" },
-  { id: 11, nombre: "BAÑO MARIA DIGITAL 12 LITROS (ACKERMAN)", categoria: "Laboratorio", subcategoria: "Equipos", precio: 850.00, imagenes: ["img/productos/laboratorio/equipos/BAÑO MARIA DIGITAL 12 LITROS (ACKERMAN).png"], etiqueta: "" },
-  { id: 12, nombre: "BAÑO MARIA DIGITAL 18 LITROS (FAITHFUL)", categoria: "Laboratorio", subcategoria: "Equipos", precio: 999.00, imagenes: ["img/productos/laboratorio/equipos/BAÑO MARIA DIGITAL 18 LITROS (FAITHFUL).png"], etiqueta: "" },
-  { id: 13, nombre: "BAÑO MARIA DIGITAL 3 LITROS", categoria: "Laboratorio", subcategoria: "Equipos", precio: 350.00, imagenes: ["img/productos/laboratorio/equipos/BAÑO MARIA DIGITAL 3 LITROS.png"], etiqueta: "" },
-  { id: 14, nombre: "BAÑO MARIA DIGITAL 6 LITROS (ACKERMAN)", categoria: "Laboratorio", subcategoria: "Equipos", precio: 650.00, imagenes: ["img/productos/laboratorio/equipos/BAÑO MARIA DIGITAL 6 LITROS (ACKERMAN).png"], etiqueta: "" },
-  { id: 15, nombre: "CENTRIFUGA 12 TUBOS ANALOGA (KYNTEL)", categoria: "Laboratorio", subcategoria: "Equipos", precio: 580.00, imagenes: ["img/productos/laboratorio/equipos/CENTRIFUGA 12 TUBOS ANALOGA (KYNTEL).png"], etiqueta: "" },
-  { id: 16, nombre: "CENTRIFUGA 6 TUBOS ANALOGA MOD. 800D", categoria: "Laboratorio", subcategoria: "Equipos", precio: 220.00, imagenes: ["img/productos/laboratorio/equipos/CENTRIFUGA 6 TUBOS ANALOGA MOD. 800D.png"], etiqueta: "" },
-  { id: 17, nombre: "CENTRIFUGA CLINICA DIGITAL 12 TUBOS (ACKERMAN)", categoria: "Laboratorio", subcategoria: "Equipos", precio: 1250.00, imagenes: ["img/productos/laboratorio/equipos/CENTRIFUGA CLINICA DIGITAL 12 TUBOS (ACKERMAN).png"], etiqueta: "" },
-  { id: 18, nombre: "CENTRIFUGA DE HEMATOCRITO 24 CAPILARES ANALOGA MOD. HN-S12A (HINOTEK)", categoria: "Laboratorio", subcategoria: "Equipos", precio: 1200.00, imagenes: ["img/productos/laboratorio/equipos/CENTRIFUGA DE HEMATOCRITO 24 CAPILARES ANALOGA MOD. HN-S12A (HINOTEK).png"], etiqueta: "" },
-  { id: 19, nombre: "CENTRIFUGA DIGITAL 24 TUBOS MOD - 802C (KYNTEL)", categoria: "Laboratorio", subcategoria: "Equipos", precio: 2300.00, imagenes: ["img/productos/laboratorio/equipos/CENTRIFUGA DIGITAL 24 TUBOS MOD - 802C (KYNTEL).png"], etiqueta: "" },
-  { id: 20, nombre: "CONTADOR DE CELULAS ANALOGA 8 TECLAS", categoria: "Laboratorio", subcategoria: "Equipos", precio: 600.00, imagenes: ["img/productos/laboratorio/equipos/CONTADOR DE CELULAS ANALOGA 8 TECLAS.png"], etiqueta: "" },
-  { id: 21, nombre: "CONTADOR DE CELULAS DIGITAL 10 GRUPOS JSQA", categoria: "Laboratorio", subcategoria: "Equipos", precio: 350.00, imagenes: ["img/productos/laboratorio/equipos/CONTADOR DE CELULAS DIGITAL 10 GRUPOS JSQA.png"], etiqueta: "" },
-  { id: 22, nombre: "DENSITOMETRO (DETECTOR DE TURBIDEZ POR SUSPENSION) MOD. DEN-1B-BIOSAN", categoria: "Laboratorio", subcategoria: "Equipos", precio: 4500.00, imagenes: ["img/productos/laboratorio/equipos/DENSITOMETRO (DETECTOR DE TURBIDEZ POR SUSPENSION) MOD. DEN-1B-BIOSAN.png"], etiqueta: "" },
-  { id: 23, nombre: "DSR-28D ROTADOR SEROLOGICO DIGITAL", categoria: "Laboratorio", subcategoria: "Equipos", precio: 1950.00, imagenes: ["img/productos/laboratorio/equipos/DSR-28D ROTADOR SEROLOGICO DIGITAL.png"], etiqueta: "" },
-  { id: 24, nombre: "ES-80 BAÑO MARIA AL SECO", categoria: "Laboratorio", subcategoria: "Equipos", precio: 750.00, imagenes: ["img/productos/laboratorio/equipos/ES-80 BAÑO MARIA AL SECO.png"], etiqueta: "" },
-  { id: 25, nombre: "FOTOMETRO HI97711 - HANNA", categoria: "Laboratorio", subcategoria: "Equipos", precio: 2500.00, imagenes: ["img/productos/laboratorio/equipos/FOTOMETRO HI97711 - HANNA.png"], etiqueta: "" },
-  { id: 26, nombre: "HORNO ESTERILIZADOR DE SECADO 65 LITROS (FAITHFUL)", categoria: "Laboratorio", subcategoria: "Equipos", precio: 3150.00, imagenes: ["img/productos/laboratorio/equipos/HORNO ESTERILIZADOR DE SECADO 65 LITROS (FAITHFUL).png"], etiqueta: "" },
-  { id: 27, nombre: "INCUBADORA MICROBIOLOGICA 18 LITROS (ACKERMAN)", categoria: "Laboratorio", subcategoria: "Equipos", precio: 1250.00, imagenes: ["img/productos/laboratorio/equipos/INCUBADORA MICROBIOLOGICA 18 LITROS (ACKERMAN).png"], etiqueta: "" },
-  { id: 28, nombre: "INCUBADORA MICROBIOLOGICA PORTATIL 9.2 LITROS (ACKERMAN)", categoria: "Laboratorio", subcategoria: "Equipos", precio: 1000.00, imagenes: ["img/productos/laboratorio/equipos/INCUBADORA MICROBIOLOGICA PORTATIL 9.2 LITROS (ACKERMAN).png"], etiqueta: "" },
-  { id: 29, nombre: "MEDIDOR DE PH CHECKER (H198103) - HANNA", categoria: "Laboratorio", subcategoria: "Equipos", precio: null, imagenes: ["img/productos/laboratorio/equipos/MEDIDOR DE PH CHECKER (H198103) - HANNA.png"], etiqueta: "" },
-  { id: 30, nombre: "MEDIDOR DE PH DIGITAL", categoria: "Laboratorio", subcategoria: "Equipos", precio: 50.00, imagenes: ["img/productos/laboratorio/equipos/MEDIDOR DE PH DIGITAL.png"], etiqueta: "" },
-  { id: 31, nombre: "MEDIDOR DE PH/TEMP (H198128) - HANNA", categoria: "Laboratorio", subcategoria: "Equipos", precio: null, imagenes: ["img/productos/laboratorio/equipos/MEDIDOR DE PH/TEMP (H198128) - HANNA.png"], etiqueta: "" },
-  { id: 32, nombre: "MICROCENTRIFUGA DIGITAL 24 CAPILARES (ACKERMAN)", categoria: "Laboratorio", subcategoria: "Equipos", precio: 1800.00, imagenes: ["img/productos/laboratorio/equipos/MICROCENTRIFUGA DIGITAL 24 CAPILARES (ACKERMAN).png"], etiqueta: "" },
-  { id: 33, nombre: "MICROPIPETA AUTOMATICA RANGO FIJO", categoria: "Laboratorio", subcategoria: "Equipos", precio: 150.00, imagenes: ["img/productos/laboratorio/equipos/MICROPIPETA AUTOMATICA RANGO FIJO.png"], etiqueta: "" },
-  { id: 34, nombre: "MICROPIPETA AUTOMATICA RANGO VARIABLE", categoria: "Laboratorio", subcategoria: "Equipos", precio: 120.00, imagenes: ["img/productos/laboratorio/equipos/MICROPIPETA AUTOMATICA RANGO VARIABLE.png"], etiqueta: "" },
-  { id: 35, nombre: "MICROSCOPIO BINOCULAR RG-2005B (MICROOS)", categoria: "Laboratorio", subcategoria: "Equipos", precio: 1000.00, imagenes: ["img/productos/laboratorio/equipos/MICROSCOPIO BINOCULAR RG-2005B (MICROOS).png"], etiqueta: "" },
-  { id: 36, nombre: "MICROSCOPIO BINOCULAR RG-216B (MICROOS)", categoria: "Laboratorio", subcategoria: "Equipos", precio: 2700.00, imagenes: ["img/productos/laboratorio/equipos/MICROSCOPIO BINOCULAR RG-216B (MICROOS).png"], etiqueta: "" },
-  { id: 37, nombre: "MICROSCOPIO TRINOCULAR BINOCULAR RG - 216T LCD (MICROOS)", categoria: "Laboratorio", subcategoria: "Equipos", precio: 4500.00, imagenes: ["img/productos/laboratorio/equipos/MICROSCOPIO TRINOCULAR BINOCULAR RG - 216T LCD (MICROOS).png"], etiqueta: "" },
-  { id: 38, nombre: "ROTADOR SEROLOGICO ANALOGO (EUROTECH)", categoria: "Laboratorio", subcategoria: "Equipos", precio: 700.00, imagenes: ["img/productos/laboratorio/equipos/ROTADOR SEROLOGICO ANALOGO (EUROTECH).png"], etiqueta: "" }
+  { id: 1, nombre: "AGITADOR DE VORTICE MOD. XH-D - HINOTEK", categoria: "Laboratorio", subcategoria: "Equipos", precio: 650.00, imagenes: ["https://res.cloudinary.com/dds7iswlk/image/upload/v1778081937/1_nh5rms.png"], etiqueta: "" },
+  { id: 2, nombre: "AGITADOR MAGNETICO CON PLACA CALIENTE MOD. MSH-300-BIOSAN", categoria: "Laboratorio", subcategoria: "Equipos", precio: 3050.00, imagenes: ["https://res.cloudinary.com/dds7iswlk/image/upload/v1778081937/2_x8lemg.png"], etiqueta: "" },
+  { id: 3, nombre: "ANALIZADOR QUIMICO SEMIAUTOMATICO (BIOBASE)", categoria: "Laboratorio", subcategoria: "Equipos", precio: 4500.00, imagenes: ["https://res.cloudinary.com/dds7iswlk/image/upload/v1778081937/3_jlwvhu.png"], etiqueta: "" },
+  { id: 4, nombre: "ATOCLAVE VERTICAL PORTATIL ANALOGA 18 LITROS (ACKERMAN)", categoria: "Laboratorio", subcategoria: "Equipos", precio: 1350.00, imagenes: ["https://res.cloudinary.com/dds7iswlk/image/upload/v1778081938/4_iaxugl.png"], etiqueta: "" },
+  { id: 5, nombre: "ATOCLAVE VERTICAL PORTATIL ANALOGA 24 LITROS (ACKERMAN)", categoria: "Laboratorio", subcategoria: "Equipos", precio: 1650.00, imagenes: ["https://res.cloudinary.com/dds7iswlk/image/upload/v1778081940/5_xa2b7e.png"], etiqueta: "" },
+  { id: 6, nombre: "ATOCLAVE VERTICAL PORTATIL DIGITAL 18 LITROS (KYNTEL)", categoria: "Laboratorio", subcategoria: "Equipos", precio: 2000.00, imagenes: ["https://res.cloudinary.com/dds7iswlk/image/upload/v1778081940/6_rv6n8h.png"], etiqueta: "" },
+  { id: 7, nombre: "ATOCLAVE VERTICAL PORTATIL DIGITAL 24 LITROS (KYNTEL)", categoria: "Laboratorio", subcategoria: "Equipos", precio: 2300.00, imagenes: ["https://res.cloudinary.com/dds7iswlk/image/upload/v1778081942/7_xgo5vq.png"], etiqueta: "" },
+  { id: 8, nombre: "BALANZA DIGITAL DE PRECISION 220GR/0.0001G (FA2204)", categoria: "Laboratorio", subcategoria: "Equipos", precio: 2500.00, imagenes: ["https://res.cloudinary.com/dds7iswlk/image/upload/v1778081943/8_rvupso.png"], etiqueta: "" },
+  { id: 9, nombre: "BALANZA DIGITAL DE PRECISION 3000GR/0.01G (ACKERMAN)", categoria: "Laboratorio", subcategoria: "Equipos", precio: 550.00, imagenes: ["https://res.cloudinary.com/dds7iswlk/image/upload/v1778081944/9_kmnlke.png"], etiqueta: "" },
+  { id: 10, nombre: "BALANZA DIGITAL DE PRECISION 310GR/0.001G (ACKERMAN)", categoria: "Laboratorio", subcategoria: "Equipos", precio: 1250.00, imagenes: ["https://res.cloudinary.com/dds7iswlk/image/upload/v1778081945/10_cjjunr.png"], etiqueta: "" },
+  { id: 11, nombre: "BAÑO MARIA DIGITAL 12 LITROS (ACKERMAN)", categoria: "Laboratorio", subcategoria: "Equipos", precio: 850.00, imagenes: ["https://res.cloudinary.com/dds7iswlk/image/upload/v1778081946/11_mpyu5r.png"], etiqueta: "" },
+  { id: 12, nombre: "BAÑO MARIA DIGITAL 18 LITROS (FAITHFUL)", categoria: "Laboratorio", subcategoria: "Equipos", precio: 999.00, imagenes: ["https://res.cloudinary.com/dds7iswlk/image/upload/v1778081947/12_zhpmq2.png"], etiqueta: "" },
+  { id: 13, nombre: "BAÑO MARIA DIGITAL 3 LITROS", categoria: "Laboratorio", subcategoria: "Equipos", precio: 350.00, imagenes: ["https://res.cloudinary.com/dds7iswlk/image/upload/v1778081949/13_se3kb2.png"], etiqueta: "" },
+  { id: 14, nombre: "BAÑO MARIA DIGITAL 6 LITROS (ACKERMAN)", categoria: "Laboratorio", subcategoria: "Equipos", precio: 650.00, imagenes: ["https://res.cloudinary.com/dds7iswlk/image/upload/v1778081950/14_seusbu.png"], etiqueta: "" },
+  { id: 15, nombre: "CENTRIFUGA 12 TUBOS ANALOGA (KYNTEL)", categoria: "Laboratorio", subcategoria: "Equipos", precio: 580.00, imagenes: ["https://res.cloudinary.com/dds7iswlk/image/upload/v1778081951/15_yuzq8j.png"], etiqueta: "" },
+  { id: 16, nombre: "CENTRIFUGA 6 TUBOS ANALOGA MOD. 800D", categoria: "Laboratorio", subcategoria: "Equipos", precio: 220.00, imagenes: ["https://res.cloudinary.com/dds7iswlk/image/upload/v1778081952/16_liw0zd.png"], etiqueta: "" },
+  { id: 17, nombre: "CENTRIFUGA CLINICA DIGITAL 12 TUBOS (ACKERMAN)", categoria: "Laboratorio", subcategoria: "Equipos", precio: 1250.00, imagenes: ["https://res.cloudinary.com/dds7iswlk/image/upload/v1778081953/17_fvsg7n.png"], etiqueta: "" },
+  { id: 18, nombre: "CENTRIFUGA DE HEMATOCRITO 24 CAPILARES ANALOGA MOD. HN-S12A (HINOTEK)", categoria: "Laboratorio", subcategoria: "Equipos", precio: 1200.00, imagenes: ["https://res.cloudinary.com/dds7iswlk/image/upload/v1778081955/18_wvlhy9.png"], etiqueta: "" },
+  { id: 19, nombre: "CENTRIFUGA DIGITAL 24 TUBOS MOD - 802C (KYNTEL)", categoria: "Laboratorio", subcategoria: "Equipos", precio: 2300.00, imagenes: ["https://res.cloudinary.com/dds7iswlk/image/upload/v1778081956/19_rutc1s.png"], etiqueta: "" },
+  { id: 20, nombre: "CONTADOR DE CELULAS ANALOGA 8 TECLAS", categoria: "Laboratorio", subcategoria: "Equipos", precio: 600.00, imagenes: ["https://res.cloudinary.com/dds7iswlk/image/upload/v1778081957/20_cmu0gh.png"], etiqueta: "" },
+  { id: 21, nombre: "CONTADOR DE CELULAS DIGITAL 10 GRUPOS JSQA", categoria: "Laboratorio", subcategoria: "Equipos", precio: 350.00, imagenes: ["https://res.cloudinary.com/dds7iswlk/image/upload/v1778081958/21_yjly2h.png"], etiqueta: "" },
+  { id: 22, nombre: "DENSITOMETRO (DETECTOR DE TURBIDEZ POR SUSPENSION) MOD. DEN-1B-BIOSAN", categoria: "Laboratorio", subcategoria: "Equipos", precio: 4500.00, imagenes: ["https://res.cloudinary.com/dds7iswlk/image/upload/v1778081959/22_bx7afy.png"], etiqueta: "" },
+  { id: 23, nombre: "DSR-28D ROTADOR SEROLOGICO DIGITAL", categoria: "Laboratorio", subcategoria: "Equipos", precio: 1950.00, imagenes: ["https://res.cloudinary.com/dds7iswlk/image/upload/v1778081960/23_rvaenx.png"], etiqueta: "" },
+  { id: 24, nombre: "ES-80 BAÑO MARIA AL SECO", categoria: "Laboratorio", subcategoria: "Equipos", precio: 750.00, imagenes: ["https://res.cloudinary.com/dds7iswlk/image/upload/v1778081962/24_t1p7bs.png"], etiqueta: "" },
+  { id: 25, nombre: "FOTOMETRO HI97711 - HANNA", categoria: "Laboratorio", subcategoria: "Equipos", precio: 2500.00, imagenes: ["https://res.cloudinary.com/dds7iswlk/image/upload/v1778081963/25_xkqp21.png"], etiqueta: "" },
+  { id: 26, nombre: "HORNO ESTERILIZADOR DE SECADO 65 LITROS (FAITHFUL)", categoria: "Laboratorio", subcategoria: "Equipos", precio: 3150.00, imagenes: ["https://res.cloudinary.com/dds7iswlk/image/upload/v1778081964/26_inmgxi.png"], etiqueta: "" },
+  { id: 27, nombre: "INCUBADORA MICROBIOLOGICA 18 LITROS (ACKERMAN)", categoria: "Laboratorio", subcategoria: "Equipos", precio: 1250.00, imagenes: ["https://res.cloudinary.com/dds7iswlk/image/upload/v1778081965/27_magimz.png"], etiqueta: "" },
+  { id: 28, nombre: "INCUBADORA MICROBIOLOGICA PORTATIL 9.2 LITROS (ACKERMAN)", categoria: "Laboratorio", subcategoria: "Equipos", precio: 1000.00, imagenes: ["https://res.cloudinary.com/dds7iswlk/image/upload/v1778081966/28_rwligy.png"], etiqueta: "" },
+  { id: 29, nombre: "MEDIDOR DE PH CHECKER (H198103) - HANNA", categoria: "Laboratorio", subcategoria: "Equipos", precio: null, imagenes: ["https://res.cloudinary.com/dds7iswlk/image/upload/v1778081968/29_xtrrsx.png"], etiqueta: "" },
+  { id: 30, nombre: "MEDIDOR DE PH DIGITAL", categoria: "Laboratorio", subcategoria: "Equipos", precio: 50.00, imagenes: ["https://res.cloudinary.com/dds7iswlk/image/upload/v1778081969/30_uxejd0.png"], etiqueta: "" },
+  { id: 31, nombre: "MEDIDOR DE PH/TEMP (H198128) - HANNA", categoria: "Laboratorio", subcategoria: "Equipos", precio: null, imagenes: ["https://res.cloudinary.com/dds7iswlk/image/upload/v1778081970/31_os3hxw.png"], etiqueta: "" },
+  { id: 32, nombre: "MICROCENTRIFUGA DIGITAL 24 CAPILARES (ACKERMAN)", categoria: "Laboratorio", subcategoria: "Equipos", precio: 1800.00, imagenes: ["https://res.cloudinary.com/dds7iswlk/image/upload/v1778081971/32_jzg4mg.png"], etiqueta: "" },
+  { id: 33, nombre: "MICROPIPETA AUTOMATICA RANGO FIJO", categoria: "Laboratorio", subcategoria: "Equipos", precio: 150.00, imagenes: ["https://res.cloudinary.com/dds7iswlk/image/upload/v1778081973/33_nxpucq.png"], etiqueta: "" },
+  { id: 34, nombre: "MICROPIPETA AUTOMATICA RANGO VARIABLE", categoria: "Laboratorio", subcategoria: "Equipos", precio: 120.00, imagenes: ["https://res.cloudinary.com/dds7iswlk/image/upload/v1778081974/34_gkiptk.jpg"], etiqueta: "" },
+  { id: 35, nombre: "MICROSCOPIO BINOCULAR RG-2005B (MICROOS)", categoria: "Laboratorio", subcategoria: "Equipos", precio: 1000.00, imagenes: ["https://res.cloudinary.com/dds7iswlk/image/upload/v1778081975/35_lgkchv.png"], etiqueta: "" },
+  { id: 36, nombre: "MICROSCOPIO BINOCULAR RG-216B (MICROOS)", categoria: "Laboratorio", subcategoria: "Equipos", precio: 2700.00, imagenes: ["https://res.cloudinary.com/dds7iswlk/image/upload/v1778081977/36_ai9ljr.png"], etiqueta: "" },
+  { id: 37, nombre: "MICROSCOPIO TRINOCULAR BINOCULAR RG - 216T LCD (MICROOS)", categoria: "Laboratorio", subcategoria: "Equipos", precio: 4500.00, imagenes: ["https://res.cloudinary.com/dds7iswlk/image/upload/v1778081977/37_qdg4vw.png"], etiqueta: "" },
+  { id: 38, nombre: "ROTADOR SEROLOGICO ANALOGO (EUROTECH)", categoria: "Laboratorio", subcategoria: "Equipos", precio: 700.00, imagenes: ["https://res.cloudinary.com/dds7iswlk/image/upload/v1778081978/38_uyajie.png"], etiqueta: "" }
 ];
 
 // --- BLOQUE 2: MATERIAL E INSUMOS ---
@@ -360,37 +360,77 @@ function formatCurrency(amount) {
   }).format(amount);
 }
 
+// 🔹 Configuración Cloudinary
+const CLOUD_NAME = "dds7iswlk";
+
+function getImagen(nombre) {
+  // Imagen por defecto
+  if (!nombre) return "img/productos/placeholder.png";
+  
+  // Detectar URLs completas
+  if (nombre.startsWith("http")) return nombre;
+  
+  // Detectar rutas locales
+  if (nombre.startsWith("img/")) return nombre;
+  
+  // Constructor de Cloudinary
+  return `https://res.cloudinary.com/dds7iswlk/image/upload/w_300,f_auto,q_auto/v1/${nombre}`;
+}
+
+
+
+// 🔹 Render de productos
 function renderizarProductos(lista) {
   if (!productsGrid) return;
+
   productsGrid.innerHTML = lista
     .map((product) => {
-      const pImage = (product.imagenes && product.imagenes.length > 0) ? product.imagenes[0] : "img/productos/placeholder.png";
-      const pnombre = product.nombre || product.nombre;
-      const pprecio = product.precio !== undefined ? product.precio : product.precio;
+      const pImage = (product.imagenes && product.imagenes.length > 0)
+        ? getImagen(product.imagenes[0], 300)
+        : (product.imagen ? product.imagen : "img/productos/placeholder.png");
+
+      const pnombre = product.nombre;
+      const pprecio = product.precio;
 
       return `
       <article class="product-card">
         <div class="product-media" style="padding: 0; overflow: hidden;">
-          <img src="${pImage}" alt="${pnombre}" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;">
+          <img 
+            src="${pImage}" 
+            alt="${pnombre}" 
+            loading="lazy"
+            onerror="this.src='img/productos/placeholder.png';"
+            style="width:100%; aspect-ratio:1/1; object-fit:contain;"
+          >
         </div>
+
         <div class="product-tags">
           ${product.discount ? `<span class="tag tag-discount">${product.discount}</span>` : ""}
           ${product.isNew ? '<span class="tag tag-new">Nuevo</span>' : ""}
         </div>
+
         <h3>${pnombre}</h3>
         <p>${product.description || ""}</p>
+
         <div class="product-footer">
           <div class="product-precio">
             <small>${product.originalprecio ? formatCurrency(product.originalprecio) : ""}</small>
             <strong>${pprecio ? 'S/ ' + pprecio.toFixed(2) : 'Consultar'}</strong>
           </div>
-          <button class="add-to-cart" type="button" data-product-id="${product.id}">Agregar</button>
+
+          <button 
+            class="add-to-cart" 
+            type="button" 
+            data-product-id="${product.id}">
+            Agregar
+          </button>
         </div>
       </article>
       `;
     })
     .join("");
 
+  // 🔹 Eventos carrito
   document.querySelectorAll(".add-to-cart").forEach((button) => {
     button.addEventListener("click", () => {
       addToCart(Number(button.dataset.productId));

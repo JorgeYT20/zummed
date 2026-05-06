@@ -604,7 +604,7 @@ button {
   height: 100%;
   object-fit: cover;
   border-radius: inherit;
-  background: #f0f0f0; /* Fondo gris si no hay imagen */
+  background: #ffffff; /* Fondo gris si no hay imagen */
   min-height: 200px;
   display: block;
 }

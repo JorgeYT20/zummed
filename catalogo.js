@@ -106,16 +106,16 @@ document.addEventListener("DOMContentLoaded", () => {
       const pCat = product.categoria || product.category || "";
       const pprecio = product.precio || product.precio || 0;
       
-      // Mostrar imagen real si existe (desde imagenes[] o imagen fallback), sino el texto
-      const pImage = (product.imagenes && product.imagenes.length > 0) ? product.imagenes[0] : (product.imagen || null);
+      // Mostrar imagen usando Cloudinary o fallback local
+      const pImage = (product.imagenes && product.imagenes.length > 0)
+        ? getImagen(product.imagenes[0], 300)
+        : (product.imagen ? product.imagen : "img/productos/placeholder.png");
       
-      const mediaContent = pImage 
-        ? `<img src="${pImage}" alt="${pnombre}" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;">`
-        : (pnombre.split(" ")[0]);
+      const mediaContent = `<img src="${pImage}" alt="${pnombre}" loading="lazy" onerror="this.src='img/productos/placeholder.png';" style="width:100%; aspect-ratio:1/1; object-fit:contain;">`;
 
       return `
       <article class="product-card catalog-card">
-        <div class="product-media catalog-media" style="padding: ${pImage ? '0' : '24px'}; overflow: hidden;">
+        <div class="product-media catalog-media" style="padding: 0; overflow: hidden;">
           ${mediaContent}
         </div>
         <div class="product-tags">
