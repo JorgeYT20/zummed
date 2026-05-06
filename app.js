@@ -365,8 +365,8 @@ function renderizarProductos(lista) {
   productsGrid.innerHTML = lista
     .map((product) => {
       const pImage = (product.imagenes && product.imagenes.length > 0) ? product.imagenes[0] : "img/productos/placeholder.png";
-      const pnombre = product.nombre;
-      const pprecio = product.precio;
+      const pnombre = product.nombre || product.nombre;
+      const pprecio = product.precio !== undefined ? product.precio : product.precio;
 
       return `
       <article class="product-card">

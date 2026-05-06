@@ -115,6 +115,7 @@ button {
   left: 0;
   right: 0;
   background: var(--secondary);
+  color: #fff;
   flex-direction: column;
   padding: 20px;
   display: none;
@@ -802,6 +803,7 @@ button {
   .nav-links {
     position: static;
     background: transparent;
+    color: var(--text);
     flex-direction: row;
     display: inline-flex;
     padding: 0;

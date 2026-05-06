@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentSort = "default";
 
   const menuSubcategorias = {
-    'Laboratorio': ['Equipos', 'Material e Insumos', 'Reactivos'],
+    'Laboratorio': ['Equipos', 'Material e Insumos', 'Reactivos e Insumos'],
     'Equipos Médicos': ['Monitoreo y Diagnóstico', 'Pesaje y Medición', 'Descartables'],
     'Ortopedia': ['Sillas de Ruedas', 'Camas Clínicas', 'Productos y Accesorios'],
     'Mobiliario': ['Emergencia (Trauma)', 'Mobiliario Médico', 'Otros']
@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Crear contenedor de subcategorías dinámicamente
   const subcategoryContainer = document.createElement("div");
-  subcategoryContainer.classnombre = "catalog-pills subcategorias-container";
+  subcategoryContainer.className = "catalog-pills subcategorias-container";
   subcategoryContainer.style.display = "none";
   subcategoryContainer.style.marginTop = "16px";
   
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     // Botón "Todas"
     const btnAll = document.createElement("button");
-    btnAll.classnombre = "filter-pill sub-pill btn-filtro-sub active";
+    btnAll.className = "filter-pill sub-pill btn-filtro-sub active";
     btnAll.setAttribute("data-subcategory", "all");
     btnAll.textContent = "Todas las subcategorías";
     subcategoryContainer.appendChild(btnAll);
@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Botones dinámicos
     menuSubcategorias[categoriaSeleccionada].forEach(subcat => {
       const btn = document.createElement("button");
-      btn.classnombre = "filter-pill sub-pill btn-filtro-sub";
+      btn.className = "filter-pill sub-pill btn-filtro-sub";
       btn.setAttribute("data-subcategory", subcat);
       btn.textContent = subcat;
       subcategoryContainer.appendChild(btn);
